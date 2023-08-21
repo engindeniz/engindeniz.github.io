@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="robots" content="noindex">
+
+    <title>Deniz Engin</title>
+    <meta name="description" content="VideoQA">
+    <meta name="author" content="Deniz Engin">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Deniz Engin">
+    <meta property="og:description" content="VideoQA">
+
+    <meta name="msapplication-TileColor" content="#ffc40d">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="css/main.css?1589893399693513343">
+    <link rel="canonical" href="http://localhost:4000">
+    <link rel="alternate" type="application/rss+xml" title="Deniz Engin" href="feed.xml">
+</head>
+
+
+<body>
+
+<div class="publication-content-wrapper">
+    <div class="content-wrapper__inner">
+        <h2 class="post-list__post-title post-title header-article"
+            style="text-align: center; font-size: 22pt; font-weight: bold; padding-bottom: 10px">Zero-Shot and Few-Shot
+            Video Question Answering with Multi-Modal Prompts</h2>
+        <div class="main-post-list">
+            <ol class="post-list">
+                <li>
+                    <div class="top-authors" style="padding-bottom: 15px">
+                        <div style="margin: auto">
+                            <div style="text-align: center"><a href="https://engindeniz.github.io">Deniz Engin</a></div>
+                        </div>
+                        <div style="margin: auto">
+                            <div style="text-align: center"><a href="https://avrithis.net/">Yannis Avrithis</a></div>
+                        </div>
+                    </div>
+                </li>
+                <!--                  </ol>-->
+                <!--                <ol>-->
+                <li>
+                    <div class="two-col-row top-authors">
+                        <div style="margin: auto"><a href="https://engindeniz.github.io/vitis">Paper - Coming Soon</a></div>
+                        <div style="margin: auto"><a href="https://github.com/engindeniz/vitis">Code - Coming Soon</a>
+                        </div>
+                    </div>
+                </li>
+                <!--                <li>-->
+            </ol>
+        </div>
+
+
+        <div class="main-post-list">
+
+            <ol class="post-list">
+
+                <li>
+                    <h2 class="post-list__post-title post-title header-article">
+                        Abstract
+                    </h2>
+                    <p style="text-align: justify">Recent vision-language models are driven by large-scale pretrained
+                        models. However, adapting pretrained models on limited data presents challenges such as
+                        overfitting, catastrophic forgetting, and the cross-modal gap between vision and language. We
+                        introduce a parameter-efficient method to address these challenges, combining multimodal prompt
+                        learning and a transformer-based mapping network, while keeping the pretrained models frozen.
+                        Our experiments on several video question answering benchmarks demonstrate the superiority of
+                        our approach in terms of performance and parameter efficiency on
+                        both zero-shot and few-shot settings.</p>
+
+                    <hr class="post-list__divider">
+                </li>
+
+            </ol>
+
+            <hr class="post-list__divider ">
+
+        </div>
+        <h2 class="post-list__post-title post-title header-article">
+            Method Overview
+        </h2>
+        <div class="two-col-row" style="display: contents">
+            <div>
+                <img src="images/vitis_method.png" style="padding-bottom: 20px"/>
+            </div>
+
+            <p style="text-align: justify">(a) Our model consists of a frozen video encoder, a visual mapping
+                network, a frozen text embedding layer, a frozen language model and a frozen classifier
+                head. Given input video frames and text, video encoder extracts frame features and the visual mapping network maps
+                them to the same space as the text embeddings obtained by text embedding layer. Then, the language model takes the video and text
+                embeddings as input and predicts the masked input tokens.
+                (b) The language model incorporates learnable text prompts in the key and value of
+                multi-head-attention and adapter layers after each self-attention and feed-forward layer, before
+                LayerNorm.
+                (c) Our visual mapping network consists of a number of layers, each performing cross-attention
+                between learnable visual prompts and video frame features followed by self-attention.
+            </p>
+        </div>
+        <hr class="post-list__divider">
+        <div class="main-post-list">
+
+            <ol class="post-list">
+
+                <li>
+                    <h2 class="post-list__post-title post-title header-article">
+                        Citation
+                    </h2>
+                    <div>
+                        <code style="border: black;background: none;padding: 0">
+
+                                    <pre style="border: #c7c7c7;border-style: solid;padding: 10px;white-space: pre-wrap">
+@inproceedings{engin2023zero,
+    title={Zero-Shot and Few-Shot Video Question Answering with Multi-Modal Prompts},
+    author={Engin, Deniz and Avrithis, Yannis},
+    journal={ICCVW},
+    year={2023}
+}
+                                    </pre>
+                        </code>
+                    </div>
+                    <hr class="post-list__divider">
+                </li>
+
+            </ol>
+
+            <hr class="post-list__divider ">
+
+        </div>
+        <div class="main-post-list">
+
+            <ol class="post-list">
+
+                <li>
+                    <h2 class="post-list__post-title post-title header-article">
+                        Acknowledgements
+                    </h2>
+                    <p style="text-align: justify">This work was granted access to the HPC resources of IDRIS under the allocation 2022-AD011012263R2 made by GENCI.</p>
+
+                    <hr class="post-list__divider">
+                </li>
+
+            </ol>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
