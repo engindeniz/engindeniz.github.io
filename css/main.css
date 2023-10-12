@@ -6451,6 +6451,22 @@ div.abstract > .right-col {
         padding-bottom: 40px
     }
 }
+/*@media (min-width: 960px) {*/
+/*    .top-bar {*/
+/*        height: 50px;  !* Or your desired height *!*/
+/*        width: 100%;*/
+/*    }*/
+
+/*    .one-col-row {*/
+/*        align-items: center;*/
+/*        column-count: 1;*/
+/*        display: flex;*/
+/*        flex-direction: column; !* Arrange children vertically *!*/
+/*        padding-bottom: 40px;*/
+/*    }*/
+/*}*/
+
+
 
 .two-col-row {
     align-items: center;
