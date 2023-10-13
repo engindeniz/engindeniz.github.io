@@ -1,4 +1,6 @@
 $("div.abstract").hide()
+$("div.bibtex").hide()
+
 $(window).on('load', function(){ 
   $('a.blog-button').click(function (e) {
     if ($('.panel-cover').hasClass('panel-cover--collapsed')) return
@@ -35,6 +37,14 @@ $(window).on('load', function(){
 });
 $("a.abstract").on("click",function(){
   a=$(this).parent().parent().siblings("div.abstract")
+  if (a.is(":visible")){
+    a.fadeOut(500)
+  }
+  else {a.set
+    a.fadeIn(500)}
+})
+$("a.bibtex").on("click",function(){
+  a=$(this).parent().parent().siblings("div.bibtex")
   if (a.is(":visible")){
     a.fadeOut(500)
   }

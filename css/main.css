@@ -5688,7 +5688,7 @@ nav {
 }
 
 .navigation--social {
-    margin-left: 1.5em
+    margin-left: 0.5em
 }
 
 .navigation--social a {
@@ -6431,6 +6431,27 @@ div.abstract {
 }
 
 div.abstract > .right-col {
+    border: solid;
+    padding: 7px;
+    border-top-style: outset;
+    border-right-style: inset;
+    border-bottom-style: inset;
+    border-left-style: outset
+}
+
+a.bibtex {
+    cursor: pointer
+}
+
+div.bibtex {
+    align-items: center;
+    column-count: 2;
+    display: flex;
+    padding-bottom: 20px;
+    margin-top: -2.5em
+}
+
+div.bibtex > .right-col {
     border: solid;
     padding: 7px;
     border-top-style: outset;
