@@ -5326,13 +5326,13 @@ pre code {
 
 .content-wrapper {
     z-index: 800;
-    width: 60%;
-    max-width: 800px;
+    /*width: 60%;*/
+    /*max-width: 800px;*/
     margin-left: 40%
 }
 
 .content-wrapper__inner {
-    margin: 0 10%;
+    margin: 0 10% 0 8%;
     padding: 50px 0
 }
 
@@ -5445,7 +5445,7 @@ hr {
 
 .panel-title {
     margin: 0 0 5px 0;
-    font-size: 2.5em;
+    font-size: 2em;
     letter-spacing: 4px;
     color: #FFF
 }
@@ -6415,7 +6415,7 @@ table tr:nth-child(even) td {
 }
 
 .content-wrapper {
-    max-width: 1200px
+    /*max-width: 1200px*/
 }
 
 a.abstract {
@@ -6460,18 +6460,8 @@ div.bibtex > .right-col {
     border-left-style: outset
 }
 
-@media (min-width: 960px) {
-    .left-bar {
-        width: 25%
-    }
 
-    .two-col-row {
-        align-items: center;
-        column-count: 2;
-        display: flex;
-        padding-bottom: 40px
-    }
-}
+
 /*@media (min-width: 960px) {*/
 /*    .top-bar {*/
 /*        height: 50px;  !* Or your desired height *!*/
@@ -6488,19 +6478,18 @@ div.bibtex > .right-col {
 /*}*/
 
 
-
-.two-col-row {
-    align-items: center;
-    padding-bottom: 40px
-}
+/*.two-col-row {*/
+/*    align-items: center;*/
+/*    padding-bottom: 40px*/
+/*}*/
 
 h2.post-title {
     margin-bottom: 0.7em
 }
 
-div.two-col-row > div > img {
-    max-width: 100%
-}
+/*div.two-col-row > div > img {*/
+/*    max-width: 100%*/
+/*}*/
 
 .top-authors {
     display: flex;
@@ -6518,14 +6507,64 @@ div.two-col-row > div > img {
 
 .publication-content-wrapper {
     z-index: 800;
-    width: 60%;
-    max-width: 1000px;
+    /*width: 60%;*/
+    /*max-width: 1200px;*/
     margin-right: auto;
     margin-left: auto;
 }
 
-.header-article{
+.header-article {
     text-align: center;
     font-weight: bold;
     font-size: 15pt;
 }
+
+/* Styles for the overall container */
+.two-col-row {
+    display: flex; /* Using flexbox for layout */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line as needed */
+    /*justify-content: space-around; !* Distributes space between and around content items *!*/
+    align-items: center; /* Aligns items vertically */
+    margin: 10px; /* Adds margin around the container */
+}
+
+/* Styles for individual image containers */
+/*.image-wrapper {*/
+/*    width: 300px; !* Fixed width for all image containers *!*/
+/*    height: 200px; !* Fixed height for all image containers *!*/
+/*    overflow: hidden; !* Hides parts of the image that overflow the container *!*/
+/*    position: relative;*/
+/*    margin: 5px; !* Adds spacing between image containers *!*/
+/*}*/
+.image-wrapper {
+    width: 300px; /* Fixed width for all image containers */
+    height: 200px; /* Fixed height for all image containers */
+    overflow: hidden; /* Hides parts of the image that overflow the container */
+    position: relative;
+    margin: 10px; /* Adds spacing between image containers */
+    display: flex; /* Adds flex display to center image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    /*background: #f0f0f0; !* Optional: background color for empty areas *!*/
+}
+
+/* Styles for images within the wrappers */
+.image-wrapper img {
+    width: auto; /* Auto width to maintain aspect ratio */
+    height: 100%; /* Ensures the image fills the height of the wrapper without cropping */
+    max-width: 100%; /* Restricts image to not exceed the width of the wrapper */
+    object-fit: contain; /* Ensures the entire image fits within, without cropping */
+    position: relative; /* Adjusted to relative from absolute */
+}
+/*@media (min-width: 960px) {*/
+/*    .left-bar {*/
+/*        width: 20%*/
+/*    }*/
+
+/*    .two-col-row {*/
+/*        align-items: center;*/
+/*        column-count: 2;*/
+/*        display: flex;*/
+/*        padding-bottom: 40px*/
+/*    }*/
+/*}*/
