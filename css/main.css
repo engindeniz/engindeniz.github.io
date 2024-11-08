@@ -5324,17 +5324,41 @@ pre code {
     margin: 0 auto
 }
 
+
 .content-wrapper {
     z-index: 800;
-    /*width: 60%;*/
-    /*max-width: 800px;*/
-    margin-left: 40%
+    width: 100%; /* Use 100% width to fill the available container, but control the max-width */
+    max-width: 800px; /* Keeps it manageable in larger viewports */
+    overflow: hidden; /* Prevents content overflow */
+    position: relative; /* Position relative for better control */
+    margin: 0 auto; /* Center the container horizontally */
+    box-sizing: border-box; /* Include padding/border in width calculation */
+    padding: 20px; /* Adjust padding to avoid exceeding limits */
 }
 
 .content-wrapper__inner {
-    margin: 0 10% 0 8%;
-    padding: 50px 0
+    margin: 0 auto; /* Centers inner content horizontally */
+    padding: 20px; /* Adjust padding as needed to ensure it doesn't overflow */
+    max-width: 100%; /* Limits content width to ensure no overflow */
+    box-sizing: border-box; /* Include padding/border in width calculation */
+    overflow-wrap: break-word; /* Ensure long words break rather than overflow */
 }
+
+
+.publication-content-wrapper {
+    z-index: 800;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.publication-content-wrapper__inner {
+    margin: 0 auto; /* Center horizontally */
+    padding: 2vw 0; /* Use viewport width for responsive vertical padding */
+    width: 90%; /* Make the width flexible within its parent container */
+    max-width: 1200px; /* Set an upper limit to keep it from getting too wide on larger screens */
+}
+
 
 .footer {
     display: block;
@@ -5471,8 +5495,11 @@ hr {
 }
 
 .panel-cover--collapsed {
-    width: 40%;
-    max-width: 400px
+    /*width: 40%;*/
+    /*max-width: 400px*/
+    width: auto;
+    max-width: fit-content;
+    margin-right: auto;
 }
 
 .panel-cover--overlay {
@@ -5526,12 +5553,17 @@ hr {
 }
 
 .panel-main__content {
-    max-width: 620px;
-    margin: 0 auto
+    /*max-width: 620px;*/
+    /*margin: 0 auto*/
+    max-width: 90%; /* Changed from 620px to a percentage to make it more responsive */
+    margin: 0 auto;
+    width: 100%; /* Added width to ensure the content utilizes the available space */
 }
 
+
 .panel-main__content--fixed {
-    width: 480px;
+    /*width: 480px;*/
+    width: 80%; /* Changed from fixed 480px to percentage for better responsiveness */
     transition: width 1s;
     -webkit-transition: width 1s
 }
@@ -5901,7 +5933,21 @@ input[type="tel"]:-ms-input-placeholder {
     }
 }
 
-@media all and (max-width: 1100px) {
+
+@media all and (min-width: 1024px) and (max-width: 1400px) {
+    .content-wrapper {
+        max-width: 80%;
+        padding: 30px;
+        margin-left: 30%;
+    }
+
+    .content-wrapper__inner {
+        max-width: 80%;
+        padding: 25px;
+    }
+}
+
+@media all and (max-width: 1024px) {
     .panel-cover__logo {
         width: 70px
     }
@@ -5983,9 +6029,13 @@ input[type="tel"]:-ms-input-placeholder {
         display: none
     }
 
-    .panel-cover.panel-cover--collapsed .panel-cover__divider {
-        display: none;
-        margin: 1em auto
+    /*.panel-cover.panel-cover--collapsed .panel-cover__divider {*/
+    /*    display: none;*/
+    /*    margin: 1em auto*/
+    /*}*/
+    .panel-cover__divider {
+        width: 50%;
+        margin: 2em auto; /* changed from px to em for better scalability */
     }
 
     .navigation-wrapper {
@@ -6038,8 +6088,9 @@ input[type="tel"]:-ms-input-placeholder {
     }
 
     .content-wrapper__inner {
-        margin-right: 0;
-        margin-left: 0
+        /*margin-right: 0;*/
+        /*margin-left: 0;*/
+        align-items: center;
     }
 
     .navigation__item {
@@ -6461,7 +6512,6 @@ div.bibtex > .right-col {
 }
 
 
-
 /*@media (min-width: 960px) {*/
 /*    .top-bar {*/
 /*        height: 50px;  !* Or your desired height *!*/
@@ -6505,14 +6555,6 @@ h2.post-title {
     color: rgba(183, 6, 46, 0.6);
 }
 
-.publication-content-wrapper {
-    z-index: 800;
-    /*width: 60%;*/
-    /*max-width: 1200px;*/
-    margin-right: auto;
-    margin-left: auto;
-}
-
 .header-article {
     text-align: center;
     font-weight: bold;
@@ -6523,19 +6565,10 @@ h2.post-title {
 .two-col-row {
     display: flex; /* Using flexbox for layout */
     flex-wrap: wrap; /* Allows items to wrap onto the next line as needed */
-    /*justify-content: space-around; !* Distributes space between and around content items *!*/
     align-items: center; /* Aligns items vertically */
     margin: 10px; /* Adds margin around the container */
 }
 
-/* Styles for individual image containers */
-/*.image-wrapper {*/
-/*    width: 300px; !* Fixed width for all image containers *!*/
-/*    height: 200px; !* Fixed height for all image containers *!*/
-/*    overflow: hidden; !* Hides parts of the image that overflow the container *!*/
-/*    position: relative;*/
-/*    margin: 5px; !* Adds spacing between image containers *!*/
-/*}*/
 .image-wrapper {
     width: 300px; /* Fixed width for all image containers */
     height: 200px; /* Fixed height for all image containers */
@@ -6556,15 +6589,35 @@ h2.post-title {
     object-fit: contain; /* Ensures the entire image fits within, without cropping */
     position: relative; /* Adjusted to relative from absolute */
 }
-/*@media (min-width: 960px) {*/
-/*    .left-bar {*/
-/*        width: 20%*/
-/*    }*/
 
-/*    .two-col-row {*/
-/*        align-items: center;*/
-/*        column-count: 2;*/
-/*        display: flex;*/
-/*        padding-bottom: 40px*/
-/*    }*/
-/*}*/
+/* Styles for the overall container */
+.two-col-row-project-page {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px;
+}
+
+.image-wrapper-project-page {
+    width: 100%; /* Adjusts to 100% to be fully responsive */
+    position: relative;
+    margin: 1vw auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper-project-page img {
+    width: 100%; /* Allows the image to be responsive in width */
+    height: auto; /* Maintains aspect ratio by automatically adjusting height */
+    max-width: 100%; /* Restricts image to not exceed the width of the wrapper */
+    object-fit: contain; /* Ensures the entire image fits within, without cropping */
+    position: relative; /* Adjusted to relative from absolute */
+}
+
+
+
+
+
+
+

@@ -33,7 +33,7 @@
 <body>
 
 <div class="publication-content-wrapper">
-    <div class="content-wrapper__inner">
+    <div class="publication-content-wrapper__inner">
         <h2 class="post-list__post-title post-title header-article"
             style="text-align: center; font-size: 22pt; font-weight: bold; padding-bottom: 10px">Zero-Shot and Few-Shot
             Video Question Answering with Multi-Modal Prompts</h2>
@@ -54,7 +54,7 @@
                 <li>
                     <div class="top-authors" style="padding-bottom: 15px">
                         <div style="margin: auto"><a href="https://arxiv.org/abs/2309.15915">Paper</a></div>
-                         <div style="margin: auto"><a href="posters/ViTiS_poster.pdf">Poster</a></div>
+                        <div style="margin: auto"><a href="posters/ViTiS_poster.pdf">Poster</a></div>
                         <div style="margin: auto"><a href="https://github.com/engindeniz/vitis">Code</a>
                         </div>
                     </div>
@@ -92,34 +92,37 @@
         <h2 class="post-list__post-title post-title header-article">
             Method Overview
         </h2>
-        <div class="two-col-row" style="display: contents">
-            <div>
-                <img src="images/vitis_method.png" style="padding-bottom: 20px"/>
+
+        <div class="two-col-row-project-page">
+            <div class="image-wrapper-project-page"><img src="images/vitis_method.png">
             </div>
 
-            <p style="text-align: justify">(a) ViTiS consists of a frozen video encoder, a visual mapping
-                network, a frozen text embedding layer, a frozen language model and a frozen classifier
-                head. Given input video frames and text, video encoder extracts frame features and the visual mapping network maps
-                them to the same space as the text embeddings obtained by text embedding layer. Then, the language model takes the video and text
-                embeddings as input and predicts the masked input tokens.
-                (b) The language model incorporates learnable text prompts in the key and value of
-                multi-head-attention and adapter layers after each self-attention and feed-forward layer, before
-                LayerNorm.
-                (c) Our visual mapping network consists of a number of layers, each performing cross-attention
-                between learnable visual prompts and video frame features followed by self-attention.
-            </p>
-        </div>
-        <hr class="post-list__divider">
-        <div class="main-post-list">
 
-            <ol class="post-list">
+        <p style="text-align: justify">(a) ViTiS consists of a frozen video encoder, a visual mapping
+            network, a frozen text embedding layer, a frozen language model and a frozen classifier
+            head. Given input video frames and text, video encoder extracts frame features and the visual mapping
+            network maps
+            them to the same space as the text embeddings obtained by text embedding layer. Then, the language model
+            takes the video and text
+            embeddings as input and predicts the masked input tokens.
+            (b) The language model incorporates learnable text prompts in the key and value of
+            multi-head-attention and adapter layers after each self-attention and feed-forward layer, before
+            LayerNorm.
+            (c) Our visual mapping network consists of a number of layers, each performing cross-attention
+            between learnable visual prompts and video frame features followed by self-attention.
+        </p>
+    </div>
+    <hr class="post-list__divider">
+    <div class="main-post-list">
 
-                <li>
-                    <h2 class="post-list__post-title post-title header-article">
-                        Citation
-                    </h2>
-                    <div>
-                        <code style="border: black;background: none;padding: 0">
+        <ol class="post-list">
+
+            <li>
+                <h2 class="post-list__post-title post-title header-article">
+                    Citation
+                </h2>
+                <div>
+                    <code style="border: black;background: none;padding: 0">
 
                                     <pre style="border: #c7c7c7;border-style: solid;padding: 10px;white-space: pre-wrap">
 @inproceedings{engin_2023_ICCV,
@@ -129,34 +132,35 @@
     year={2023}
 }
                                     </pre>
-                        </code>
-                    </div>
-                    <hr class="post-list__divider">
-                </li>
+                    </code>
+                </div>
+                <hr class="post-list__divider">
+            </li>
 
-            </ol>
+        </ol>
 
-            <hr class="post-list__divider ">
+        <hr class="post-list__divider ">
 
-        </div>
-        <div class="main-post-list">
-
-            <ol class="post-list">
-
-                <li>
-                    <h2 class="post-list__post-title post-title header-article">
-                        Acknowledgements
-                    </h2>
-                    <p style="text-align: justify">This work was granted access to the HPC resources of IDRIS under the allocation 2022-AD011012263R2 made by GENCI.</p>
-
-                    <hr class="post-list__divider">
-                </li>
-
-            </ol>
-
-
-        </div>
     </div>
+    <div class="main-post-list">
+
+        <ol class="post-list">
+
+            <li>
+                <h2 class="post-list__post-title post-title header-article">
+                    Acknowledgements
+                </h2>
+                <p style="text-align: justify">This work was granted access to the HPC resources of IDRIS under the
+                    allocation 2022-AD011012263R2 made by GENCI.</p>
+
+                <hr class="post-list__divider">
+            </li>
+
+        </ol>
+
+
+    </div>
+</div>
 </div>
 </body>
 </html>
