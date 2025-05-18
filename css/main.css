@@ -6457,9 +6457,6 @@ pre.highlight code,
     float: right
 }
 
-.right-col {
-    margin-left: 20px
-}
 
 table tr:nth-child(even) td {
     background: none
@@ -6563,34 +6560,38 @@ h2.post-title {
 
 /* Styles for the overall container */
 .two-col-row {
-    display: flex; /* Using flexbox for layout */
-    flex-wrap: wrap; /* Allows items to wrap onto the next line as needed */
-    align-items: center; /* Aligns items vertically */
-    margin: 10px; /* Adds margin around the container */
+    display: flex;             /* Using flexbox for layout */
+    flex-wrap: wrap;           /* Allows items to wrap onto the next line as needed */
+    align-items: flex-start;   /* Aligns items to top */
+    gap: 30px;                 /* Adds spacing between columns */
+    margin: 10px 10px 50px;
 }
 
 .image-wrapper {
-    width: 300px; /* Fixed width for all image containers */
-    height: 200px; /* Fixed height for all image containers */
-    overflow: hidden; /* Hides parts of the image that overflow the container */
+    flex: 0 0 250px;           /* Image has fixed width of 200px and won't grow */
+    overflow: hidden;
     position: relative;
-    margin: 10px; /* Adds spacing between image containers */
-    display: flex; /* Adds flex display to center image */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    /*background: #f0f0f0; !* Optional: background color for empty areas *!*/
+    display: flex;
+    justify-content: center;
 }
 
 /* Styles for images within the wrappers */
 .image-wrapper img {
-    width: auto; /* Auto width to maintain aspect ratio */
-    height: 100%; /* Ensures the image fills the height of the wrapper without cropping */
-    max-width: 100%; /* Restricts image to not exceed the width of the wrapper */
-    object-fit: contain; /* Ensures the entire image fits within, without cropping */
-    position: relative; /* Adjusted to relative from absolute */
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    position: relative;
 }
 
-/* Styles for the overall container */
+/* Right column fills remaining space */
+.right-col {
+    flex: 1;              /* Makes it fill remaining space */
+    min-width: 0;         /* Prevents overflow */
+    margin-left: 0;       /* Not needed with gap in flex container */
+}
+
+/* Styles for the project page layout (if used elsewhere) */
 .two-col-row-project-page {
     display: flex;
     flex-wrap: wrap;
@@ -6599,7 +6600,7 @@ h2.post-title {
 }
 
 .image-wrapper-project-page {
-    width: 100%; /* Adjusts to 100% to be fully responsive */
+    width: 100%;
     position: relative;
     margin: 1vw auto;
     display: flex;
@@ -6608,15 +6609,12 @@ h2.post-title {
 }
 
 .image-wrapper-project-page img {
-    width: 100%; /* Allows the image to be responsive in width */
-    height: auto; /* Maintains aspect ratio by automatically adjusting height */
-    max-width: 100%; /* Restricts image to not exceed the width of the wrapper */
-    object-fit: contain; /* Ensures the entire image fits within, without cropping */
-    position: relative; /* Adjusted to relative from absolute */
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    position: relative;
 }
-
-
-
 
 
 
